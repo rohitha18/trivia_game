@@ -6,17 +6,29 @@ export const styles = {
       borderRadius: "20px",
      
     },
-    mainTitle: {
-        fontSize: "50px",
+    h1:
+    { fontSize: "80px",
+    marginBottom: "50px",
+    textAlign: "center",
+    color: "purple"
+
+    },
+    header: {
+        fontSize: "70px",
         marginBottom: "50px",
         textAlign: "center",
+        color: "black"
+     
     },
+   
+   
+
     submitButton: {
       marginTop: "40px",
       borderRadius: "999px",
       background: "#9c27b0",
       "&:hover": {
-        backgroundColor: "#9c27b0",
+        backgroundColor: "white",
         
       },
     },
@@ -43,6 +55,7 @@ export const styles = {
       maxWidth: "200px",
       textAlign: "center",
       flexDirection: "column",
+      color: "black"
     },
   };
   

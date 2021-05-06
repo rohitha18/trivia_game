@@ -13,8 +13,9 @@ import {
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { styles, difficulties, createMarkup } from "../helpers";
+import { styles, difficulties, createMarkup } from "../style";
 import QuizAnswers from "./QuizAnswers";
+import { borders } from '@material-ui/system';
 
 const useStyles = makeStyles((theme) => {
   return styles;
@@ -118,15 +119,21 @@ const QuizCategories = () => {
      
         {currentQuizStep === "start" ? (
           <>
+          
             <Typography variant="h1" className={classes.mainTitle}>
-              Test your trivia knowledge 😈
+              <b>TRIVIA GAME 😈</b>
             </Typography>
             <form onSubmit={handleSubmit}>
               <Grid container spacing={4}>
                 <Grid item xs={12}>
+                <Grid item xs={12}></Grid>
+                <Typography variant="h5" className={classes.title}>
+        <b>Category:</b>
+      </Typography>
                   <FormControl fullWidth variant="outlined">
+                 
                     <InputLabel id="category-select-label">
-                      Choose a category:
+                    <b>Click here!</b>
                     </InputLabel>
                     <Select
                       required
@@ -150,9 +157,12 @@ const QuizCategories = () => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={12}>
+                <Typography variant="h5" className={classes.title}>
+        <b>Difficulty:</b>
+      </Typography>
                   <FormControl fullWidth variant="outlined">
                     <InputLabel id="difficulty-select-label">
-                      Choose a Difficulty:
+                      <b>Click here!</b>
                     </InputLabel>
                     <Select
                       required
@@ -172,6 +182,9 @@ const QuizCategories = () => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={12}>
+                <Typography variant="h5" className={classes.title}>
+        <b>How many questions would you like? (1-10)*</b>
+      </Typography>
                   <TextField
                     inputProps={{ min: 1, max: 10 }}
                     required
@@ -180,7 +193,7 @@ const QuizCategories = () => {
                     id="quiz-number"
                     variant="outlined"
                     name="quiz-number"
-                    label={`Add a quiz number from 1 to 10`}
+                    
                     value={quizNumber || ""}
                     onChange={handleChange}
                   />

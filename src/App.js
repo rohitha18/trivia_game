@@ -1,9 +1,9 @@
 
-import QuizCategories from "./components/QuizCategories"
+import QuizCate from "./components/QuizCate"
 
 function App() {
   return (
-    <div><QuizCategories></QuizCategories>
+    <div><QuizCate></QuizCate>
     </div>
   );
 }

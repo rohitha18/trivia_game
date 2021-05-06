@@ -1,50 +1,47 @@
 import { Button, Typography } from "@material-ui/core";
-import AnswersReview from "./AnswersReview";
+
 import { useEffect } from "react";
 
 const TotalResults = ({
   classes,
   resetQuiz,
   currentQuizStep,
-  processedAnswers,
-  setCurrentQuizStep,
+  admittedAnswers,
+  
 }) => {
   useEffect(() => {
-    window.scrollTo(0, "20px");
+    window.scrollTo(0, "30px");
   }, []);
   return currentQuizStep === "results" ? (
     <div className={classes.results}>
-      <Typography variant="h1" className={classes.mainTitle}>
-        Results
+      <Typography variant="h4" className={classes.header}>
+        Results: {admittedAnswers.filter(({ isCorrect }) => isCorrect).length} out of{" "}{admittedAnswers.length}
       </Typography>
-      <Typography variant="h4">
-        {processedAnswers.filter(({ isCorrect }) => isCorrect).length} out of{" "}
-        {processedAnswers.length}
+      <Typography variant="h4" className={classes.Title}>
+       
       </Typography>
-      <Button
-        onClick={(e) => {
-          setCurrentQuizStep("review");
-        }}
-        className={classes.submitButton}
-        variant="contained"
-        color="primary"
-      >
-        Review
-      </Button>{" "}
+      <Typography variant="h3" className={classes.Title}>
+        
+      </Typography>
+      
+      <Typography variant="h9">
+       
+      </Typography>
+      <Typography variant="h9">
+        Do you want to play again? Click Reset below!
+      </Typography>
+      
       <Button
         onClick={resetQuiz}
         className={classes.submitButton}
-        variant="contained"
-        color="primary"
+        variant='outlined'
+        color="white"
       >
         Reset
       </Button>
     </div>
   ) : (
-    <AnswersReview
-      classes={classes}
-      resetQuiz={resetQuiz}
-      processedAnswers={processedAnswers}
+   <checkCode
     />
   );
 };

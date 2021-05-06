@@ -9,7 +9,7 @@ import {
     FormControl,
   } from "@material-ui/core";
   import { useState, useEffect } from "react";
-  import { createMarkup } from "../helpers";
+  import { createMarkup } from "../style";
   import TotalResults from "./TotalResults";
   
   const QuizAnswers = ({
@@ -20,12 +20,12 @@ import {
     setCurrentQuizStep,
   }) => {
     const [selectedAnswers, setSelectedAnswers] = useState([]);
-    const [processedAnswers, setProcessedAnswers] = useState([]);
+    const [admittedAnswers, setProcessedAnswers] = useState([]);
   
     const handleResult = (e) => {
       e.preventDefault();
   
-      const processedAnswers = selectedAnswers.map(({ answer, question }) => {
+      const admittedAnswers = selectedAnswers.map(({ answer, question }) => {
         const relatedQuestion = quizData.find(
           (category) => category.question === question
         );
@@ -40,7 +40,7 @@ import {
         };
       });
   
-      setProcessedAnswers(processedAnswers);
+      setProcessedAnswers(admittedAnswers);
     };
   
     const handleAnswerChange = (e, selectedQuestion) => {
@@ -81,7 +81,7 @@ import {
       window.scrollTo(0, "20px");
     }, []);
   
-    return !processedAnswers || !processedAnswers.length ? (
+    return !admittedAnswers || !admittedAnswers.length ? (
       <>
     
         <form onSubmit={handleResult}>
@@ -130,7 +130,7 @@ import {
         classes={classes}
         resetQuiz={resetQuiz}
         currentQuizStep={currentQuizStep}
-        processedAnswers={processedAnswers}
+        admittedAnswers={admittedAnswers}
         setCurrentQuizStep={setCurrentQuizStep}
       />
     );
