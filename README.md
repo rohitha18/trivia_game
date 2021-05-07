@@ -1,5 +1,7 @@
 # Trivia Web App
 
+Video Link -> https://www.youtube.com/watch?v=jtyrrm5paTI&feature=youtu.be&ab_channel=RohithaMadduluri
+
 For my COMP 426 final project, I created a trivia app using React. In order to create this game, I used the Open Trivia Databse that provides a completely free JSON API for use in programming. This API did not require a key; I just had to generate a URL to retrieve trivia questions. Here is the link to the API: https://opentdb.com/api_config.php. 
 
 This project did not use any CSS libraries or helpers. It is also mobile friendly and can be used on various devices. Here are screenshots of the web app on various devices.
