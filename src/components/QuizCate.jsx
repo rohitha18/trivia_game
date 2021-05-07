@@ -16,7 +16,33 @@ import { makeStyles } from "@material-ui/core/styles";
 import { styles, difficulties, createMarkup } from "../style";
 import QuizAnswers from "./QuizAnswers";
 import { borders } from '@material-ui/system';
+import React from 'react';
+import { render } from 'react-dom';
 
+class newLevels extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = { random: 0};
+  }
+
+  handleClick() {
+    const min = 1;
+    const max = 200;
+    const randomize = min + Math.random() / (max - min);
+    this.setState({ random: this.state.random + randomize });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.handleClick.bind(this)}>Click</button>
+        <div>The number is: {this.state.random}</div>
+      </div>
+    );
+  }
+}
 const useStyles = makeStyles((theme) => {
   return styles;
 });
@@ -27,6 +53,7 @@ const QuizCategories = () => {
 
   const [quizNumber, setQuizNumber] = useState(null);
   const [difficulty, setDifficulty] = useState({ id: "", name: "" });
+  
 
   const [quizData, setQuizData] = useState([]);
   const classes = useStyles();
@@ -86,6 +113,7 @@ const QuizCategories = () => {
     );
     setCategory(selectedCategory);
   };
+  
 
   const handleDifficultyChange = (e) => {
     e.preventDefault();
@@ -115,7 +143,8 @@ const QuizCategories = () => {
   }
 
   return (
-    <Container>
+    
+    <Grid>
      
         {currentQuizStep === "start" ? (
           <>
@@ -130,6 +159,7 @@ const QuizCategories = () => {
                 <Typography variant="h5" className={classes.title}>
         <b>Category:</b>
       </Typography>
+      
                   <FormControl fullWidth variant="outlined">
                  
                     <InputLabel id="category-select-label">
@@ -137,11 +167,11 @@ const QuizCategories = () => {
                     </InputLabel>
                     <Select
                       required
-                      name="category"
+                    
                       value={category.id || ""}
                       id="category-select"
                       label="Select category"
-                      labelId="category-select-label"
+                    
                       onChange={handleSelectChange}
                     >
                       {categories.map((category) => (
@@ -167,11 +197,11 @@ const QuizCategories = () => {
                     <Select
                       required
                       name="difficulty"
-                      value={difficulty.id || ""}
+                      
                       id="difficulty-select"
                       label="Select Difficulty"
-                      labelId="difficulty-select-label"
-                      onChange={handleDifficultyChange}
+                    
+                     
                     >
                       {difficulties.map((difficulty) => (
                         <MenuItem key={difficulty.id} value={difficulty.id}>
@@ -180,6 +210,8 @@ const QuizCategories = () => {
                       ))}
                     </Select>
                   </FormControl>
+                
+                
                 </Grid>
                 <Grid item xs={12}>
                 <Typography variant="h5" className={classes.title}>
@@ -195,6 +227,7 @@ const QuizCategories = () => {
                     name="quiz-number"
                     
                     value={quizNumber || ""}
+                   
                     onChange={handleChange}
                   />
                 </Grid>
@@ -220,7 +253,8 @@ const QuizCategories = () => {
           />
         )}
   
-    </Container>
+   
+    </Grid>
   );
 };
 

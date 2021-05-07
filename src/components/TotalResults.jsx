@@ -7,6 +7,9 @@ const TotalResults = ({
   resetQuiz,
   currentQuizStep,
   admittedAnswers,
+  myAnswers,
+  checker,
+  totalRightAnswers
   
 }) => {
   useEffect(() => {
