@@ -161,6 +161,7 @@ const QuizCategories = () => {
       </Typography>
       
                   <FormControl fullWidth variant="outlined">
+                  <Grid item xs={12}></Grid>
                  
                     <InputLabel id="category-select-label">
                     <b>Click here!</b>
@@ -182,10 +183,12 @@ const QuizCategories = () => {
                             )}
                           />
                         </MenuItem>
+                        
                       ))}
                     </Select>
                   </FormControl>
                 </Grid>
+                <Grid item xs={12}></Grid>
                 <Grid item xs={12}>
                 <Typography variant="h5" className={classes.title}>
         <b>Difficulty:</b>
@@ -213,6 +216,8 @@ const QuizCategories = () => {
                 
                 
                 </Grid>
+                <Grid item xs={12}></Grid>
+               
                 <Grid item xs={12}>
                 <Typography variant="h5" className={classes.title}>
         <b>How many questions would you like? (1-10)*</b>
@@ -232,11 +237,31 @@ const QuizCategories = () => {
                   />
                 </Grid>
               </Grid>
+              
+              <Grid item xs={12}>
+                <Typography variant="h5" className={classes.title}>
+       
+      </Typography>
+                  <TextField
+                    inputProps={{ min: 5, max: 12 }}
+                   
+                    
+                    type="number"
+                    id="quiz-number"
+                   
+                    name="quiz-number"
+                    
+                    value={quizNumber && ""}
+                   
+                    onChange={handleSubmit}
+                  />
+                </Grid>
+              
               <Button
                 className={classes.submitButton}
                 type="submit"
                 variant="contained"
-                color="primary"
+               
               >
                 Let's Start!
               </Button>
