@@ -14,7 +14,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { styles, difficulties, createMarkup } from "../style";
-import QuizAnswers from "./QuizAnswers";
+import Answers from "./Answers";
 import { borders } from '@material-ui/system';
 import React from 'react';
 import { render } from 'react-dom';
@@ -268,7 +268,7 @@ const QuizCategories = () => {
             </form>
           </>
         ) : (
-          <QuizAnswers
+          <Answers
             classes={classes}
             quizData={quizData}
             resetQuiz={resetQuiz}
