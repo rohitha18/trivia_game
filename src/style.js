@@ -46,9 +46,7 @@ export const styles = {
       marginLeft: "10px",
       display: "flex",
     },
-    correctAnswer: {
-      color: "green",
-    },
+    
     results: {
       display: "flex",
       margin: "0 auto",

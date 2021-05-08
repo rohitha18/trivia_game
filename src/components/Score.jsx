@@ -6,7 +6,7 @@ const TotalResults = ({
   classes,
   resetQuiz,
   currentQuizStep,
-  admittedAnswers,
+  inputanswers,
   myAnswers,
   checker,
   totalRightAnswers
@@ -18,7 +18,7 @@ const TotalResults = ({
   return currentQuizStep === "results" ? (
     <div className={classes.results}>
       <Typography variant="h4" className={classes.header}>
-        Results: {admittedAnswers.filter(({ isCorrect }) => isCorrect).length} out of{" "}{admittedAnswers.length}
+        Results: {inputanswers.filter(({ isCorrect }) => isCorrect).length} out of{" "}{inputanswers.length}
       </Typography>
       <Typography variant="h4" className={classes.Title}>
        
