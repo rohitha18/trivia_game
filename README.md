@@ -1,5 +1,8 @@
 # Trivia Web App
 
+
+Unfortunately, I faced some difficulties in trying to deploy this site so as of now, if you were to open this repository through vscode and run it on there, you can view the site through the local host. I have attached a video below for your convenience so you can see what the site looks like. 
+
 Video Link -> https://www.youtube.com/watch?v=jtyrrm5paTI&feature=youtu.be&ab_channel=RohithaMadduluri
 
 For my COMP 426 final project, I created a trivia app using React. In order to create this game, I used the Open Trivia Databse that provides a completely free JSON API for use in programming. This API did not require a key; I just had to generate a URL to retrieve trivia questions. Here is the link to the API: https://opentdb.com/api_config.php. 
@@ -11,10 +14,6 @@ This project did not use any CSS libraries or helpers. It is also mobile friendl
 ![Image 2021-05-07 at 12 54 56 PM](https://user-images.githubusercontent.com/59805673/117483304-900e9600-af33-11eb-9402-5d69286e6c95.png)
 ![Image 2021-05-07 at 12 57 46 PM](https://user-images.githubusercontent.com/59805673/117483559-d9f77c00-af33-11eb-8029-3c2c690dfb98.png)
 ![Image 2021-05-07 at 12 55 33 PM](https://user-images.githubusercontent.com/59805673/117483315-93a21d00-af33-11eb-9f9c-6b37c9762fcb.png)
-
-Unfortunately, I faced some difficulties in trying to deploy this site so as of now, if you were to open this repository through vscode and run it on there, you can view the site through the local host. I have attached a video below for your convenience so you can see what the site looks like. 
-
-https://www.youtube.com/watch?v=jtyrrm5paTI&feature=youtu.be&ab_channel=RohithaMadduluri
 
 
 # Getting Started with Create React App
